@@ -74,7 +74,6 @@ public class SecondActivity extends AppCompatActivity implements MyListener{
     private void initListeners() {
         stopServiceButton.setOnClickListener((View v) -> {
             unbindService();
-            finish();
         });
     }
 
