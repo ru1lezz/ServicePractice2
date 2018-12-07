@@ -38,7 +38,6 @@ public class SecondActivity extends AppCompatActivity implements MyListener{
     @Override
     protected void onPause() {
         super.onPause();
-        unbindService();
     }
 
     private ServiceConnection serviceConnection = new ServiceConnection() {
@@ -74,6 +73,7 @@ public class SecondActivity extends AppCompatActivity implements MyListener{
     private void initListeners() {
         stopServiceButton.setOnClickListener((View v) -> {
             unbindService();
+            stopService(MyService.newIntent(SecondActivity.this));
         });
     }
 
