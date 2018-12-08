@@ -20,11 +20,13 @@ public class MyService extends Service {
 
     @Override
     public void onCreate() {
+        Log.i("MyService", "creating service");
         sendValue();
     }
 
     @Override
     public IBinder onBind(Intent intent) {
+        Log.i("MyService", "binding service");
         return mBinder;
     }
 

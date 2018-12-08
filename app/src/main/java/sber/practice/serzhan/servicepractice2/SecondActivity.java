@@ -43,12 +43,14 @@ public class SecondActivity extends AppCompatActivity implements MyListener{
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.i("SecondActivity", "Connecting");
             mService = ((MyService.LocalBinder)service).getService();
             mService.registerListener(SecondActivity.this);
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
+            Log.i("SecondActivity", "MyService is null");
             mService = null;
         }
     };
